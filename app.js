@@ -30,10 +30,9 @@ app.post("/send-mail", async (req, res) => {
     });
 
     const mailOpts = {
-      from: "amrcdrc@gmail.com",
       to: "rekhabhandaree77@gmail.com",
       subject: subject,
-      html: `<h1>${name} (${email}) has tried to connect with you.</h1><br /><p> ${name} has said, "${msg}"</p>`,
+      html: `<h1>${name} (${email}) has tried to connect with you regarding "${subject}".</h1><br /><p> ${name} has said, "${msg}"</p>`,
     };
 
     smtpTransport.sendMail(mailOpts, function (err, info) {
